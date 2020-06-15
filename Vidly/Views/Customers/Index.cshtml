@@ -12,14 +12,18 @@
         <thead>
             <tr>
                 <th>Customers</th>
-                <th>Discount Rate</th>
+                <th>Membership Type</th>
+                <th>Delete</th>
             </tr>
         </thead>
         @foreach (var customer in Model)
         {
         <tr>
-            <td>@Html.ActionLink((String)customer.Name, "Details", new { @ID = customer.ID })</td>
-            <td>@customer.MembershipType.DiscountRate%</td>
+            <td>@Html.ActionLink((String)customer.Name, "Edit", new { @ID = customer.ID })</td>
+            <td>@customer.MembershipType.Name</td>
+            <td>
+                <button class="btn btn-link js-delete">Delete</button>
+            </td>
         </tr>
         }
     </table>
@@ -30,3 +34,11 @@ else
 }
 
 
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+        });
+    </script>
+ }
