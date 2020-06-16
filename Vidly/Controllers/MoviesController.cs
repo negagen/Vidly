@@ -44,8 +44,7 @@ namespace Vidly.Controllers
 
         public ActionResult Index(int? pageIndex, string sortBy)
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();
-            return View(movies);
+            return View();
         }
         
         [Route("Movie/Details/{id}")]
