@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.ViewModels
@@ -15,18 +16,19 @@ namespace Vidly.ViewModels
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "Nombre")]
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Genre")]
+        [Display(Name = "Genero")]
         public byte? GenreID { get; set; }
 
-        [Display(Name = "Release Date")]
+        [Display(Name = "Fecha de estreno")]
         [Required]
         public DateTime? ReleaseDate { get; set; }
 
         [Range(1, 20)]
-        [Display(Name = "Number In Stock")]
+        [Display(Name = "Cantidad disponible en el almacen")]
         [Required]
         public int? NumberInStock { get; set; }
 
@@ -34,7 +36,7 @@ namespace Vidly.ViewModels
         {
             get
             {
-                return ID != 0 ? "Edit Movie" : "New Movie";
+                return ID != 0 ? "Editar pelicula" : "Añadir pelicula";
             }
         }
 

@@ -17,13 +17,13 @@ namespace Vidly.Models
                 return ValidationResult.Success;
 
             if (customer.Birthdate == null)
-                return new ValidationResult("Birthdate is required.");
+                return new ValidationResult("La fecha de nacimiento es requerida.");
 
             var age = DateTime.Today.Year - customer.Birthdate.Value.Year;
 
             return (age >= 18)
                 ? ValidationResult.Success
-                : new ValidationResult("Customer should be at least 18 years old to go on a membership");
+                : new ValidationResult("El cliente debe tener al menos 18 para poder inscribirse en la membresia.");
         }
     }
 }

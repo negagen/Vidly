@@ -1,6 +1,6 @@
 ﻿@model Vidly.ViewModels.MovieFormViewModel
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Nuevo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm("Save", "Movies"))
 {
-    @Html.ValidationSummary(true, "Please fix the following errors")
+    @Html.ValidationSummary(true, "Por favor corregir los siguientes errores")
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.GenreID)
-        @Html.DropDownListFor(m => m.GenreID, new SelectList(Model.Genres, "ID", "Name"), "Select Movie Genre", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.GenreID, new SelectList(Model.Genres, "ID", "Name"), "Seleccione el genero de la pelicula", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.GenreID)
     </div>
     <div class="form-group">
@@ -31,7 +31,7 @@
     </div>
     @Html.HiddenFor(m => m.ID)
     @Html.AntiForgeryToken();
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
 }
 
 @section scripts

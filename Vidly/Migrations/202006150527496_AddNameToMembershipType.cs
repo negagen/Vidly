@@ -8,10 +8,10 @@ namespace Vidly.Migrations
         public override void Up()
         {
             AddColumn("dbo.MembershipTypes", "Name", c => c.String());
-            Sql("UPDATE MembershipTypes SET Name='Pay as You Go' WHERE ID=1");
-            Sql("UPDATE MembershipTypes SET Name='Monthly' WHERE ID=2");
-            Sql("UPDATE MembershipTypes SET Name='Quarter' WHERE ID=3");
-            Sql("UPDATE MembershipTypes SET Name='Yearly' WHERE ID=4");
+            Sql("UPDATE MembershipTypes SET Name='Pagar por pedido' WHERE ID=1");
+            Sql("UPDATE MembershipTypes SET Name='Mensual' WHERE ID=2");
+            Sql("UPDATE MembershipTypes SET Name='Trimestral' WHERE ID=3");
+            Sql("UPDATE MembershipTypes SET Name='Anual' WHERE ID=4");
         }
         
         public override void Down()

@@ -10,7 +10,7 @@ namespace Vidly.Dtos
     public class CustomerDto
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Please enter customer's name.")]
+        [Required(ErrorMessage = "Por favor digite el nombre del cliente")]
         [StringLength(255)]
         public string Name { get; set; }
 

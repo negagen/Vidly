@@ -3,14 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Customers</h2>
+<h2>Clientes</h2>
+
+<div style="margin: 10px 0px 10px 0px">
+    @Html.ActionLink(linkText: "Nuevo cliente", actionName: "New", routeValues: null, htmlAttributes: new { @class = "btn btn-primary", role = "button" })
+</div>
+
 
 <table id="customers" class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Customers</th>
-            <th>Membership Type</th>
-            <th>Delete</th>
+            <th>Clientes</th>
+            <th>Tipo de membresia</th>
+            <th>Borrar</th>
         </tr>
     </thead>
     <tbody>
